@@ -74,6 +74,13 @@ elseif(isset($_POST['update_user'])){
   
   $libraryObj->update_user($user_id, $user_fname, $user_contact, $user_location, $user_age);
 }
+elseif(isset($_POST['login'])){
+  $uname = $_POST['username'];
+  $pword = $_POST['password'];
+
+  $libraryObj->login($uname, $pword);
+
+}
 
 
 

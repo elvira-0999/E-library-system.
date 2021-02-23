@@ -172,6 +172,17 @@ public function update_user($user_id, $user_fname, $user_contact, $user_location
   }
 
 }
+public function login($username, $password){
+  $sql = "SELECT * FROM author WHERE author_username = '$username' AND author_password = '$password'";
+  $result = $this->conn->query($sql);
+
+  if($result->num_rows == 1){
+    header('location:readAuthor.php');
+
+  }else {
+    die("ERROR: ".$this->conn->error);
+  }
+}
 
 
 }
